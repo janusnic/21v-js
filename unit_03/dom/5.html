@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Hello, JavaScript!</title>
+    <script>
+    window.onload = function(){           
+        var span1 = document.getElementById('one');
+
+        var_dump(span1.style);  
+    }
+
+    function var_dump(obj){
+        var s = '<h1>' + obj + '</h1>';
+        s += '<ol>';
+
+        for (p in obj)
+            s += '<li><b>' + p + '</b> : ' + obj[p] + '</li>';
+        
+        s += '</ol>';
+        window.document.body.innerHTML = s;
+    }   
+    </script>
+</head>
+<body>
+    <div>
+        <span id="one">Раз</span>
+        <span>Два</span>
+    </div>
+</body>
+</html>
