@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to create a SCRIPT element that alerts "Hello World!".</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+function myFunction() {
+    var x = document.createElement("SCRIPT");
+    var t = document.createTextNode("alert('Hello World!')");
+    x.appendChild(t);
+    document.body.appendChild(x);
+}
+</script>
+
+</body>
+</html>

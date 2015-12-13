@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="p1">Hello World!</p>
+<script id="myScript" src="demo_async.js" async></script>
+
+<p>executed asynchronously</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myScript").async;
+    document.getElementById("demo").innerHTML = x;
+}
+</script>
+
+</body>
+</html>

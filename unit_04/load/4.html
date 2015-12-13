@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script id="myScript" src="demo_defer.js" defer></script>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myScript").defer;
+    document.getElementById("demo").innerHTML = x;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script id="myScript">
+document.write("Hello World!");
+</script>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myScript").text;
+    document.getElementById("demo").innerHTML = x;
+}
+</script>
+
+</body>
+</html>
