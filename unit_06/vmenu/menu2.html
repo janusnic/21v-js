@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS+JS OnClick</title>
+
+<style>
+#center {
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 450px;
+    position: absolute;
+    margin-top: -225px;
+    margin-left: -100px; 
+    text-align: center;
+}
+#menu_body li ul {
+    display: none;
+    }
+#menu_body li:hover ul, #menu_body li.over ul {
+    display: block;
+    } 
+ #menu_body { 
+    background:#171717; 
+    width: 200px;
+    } 
+#menu_body a { 
+    display: block; 
+    width: 185px; 
+    height: 24px;
+    padding-left: 15px;
+    } 
+     
+#menu_body ul li { 
+    list-style-type: none; 
+    border-bottom: 1px solid #fff; 
+    margin-left: -40px; 
+    padding-left: 0px; 
+    } 
+
+#menu_body ul li a { 
+    color: #fff; 
+    text-decoration: none;
+    font-size: 115%;
+    font-family: Georgia; 
+    } 
+    
+#menu_body ul li a:hover { 
+    color: #fff; 
+    text-decoration: none; 
+    background:#424242;
+    } 
+     
+#menu_body ul li ul li { 
+    border: 0; 
+    list-style-type: none; 
+    color: #fff; 
+    list-style-position: inside; 
+    background:#7F7F7F;
+    } 
+     
+#menu_body ul li ul{ 
+    border-top: 1px solid #fff; 
+    margin-left: -10px; 
+    padding-left: 50px; 
+    } 
+
+</style> 
+<script type="text/javascript">
+var id_menu = new Array('sub_menu_1','sub_menu_2','sub_menu_3','sub_menu_4','sub_menu_5','sub_menu_6','sub_menu_7','sub_menu_8','sub_menu_9','sub_menu_10');
+startList = function allclose() {
+    for (i=0; i < id_menu.length; i++){
+        document.getElementById(id_menu[i]).style.display = "none";
+    }
+}
+function openMenu(id){
+    for (i=0; i < id_menu.length; i++){
+        if (id != id_menu[i]){
+            document.getElementById(id_menu[i]).style.display = "none";
+        }
+    }
+    if (document.getElementById(id).style.display == "block"){
+        document.getElementById(id).style.display = "none";
+    }else{
+        document.getElementById(id).style.display = "block"; 
+    }
+}
+window.onload=startList;
+</script>
+</head>
+<body>
+
+<div id="wrap">
+    <div id="headline">
+        CSS+JS OnClick
+    </div>
+    <div id="content" class="clearfix">
+        <div id="center">
+<div id="menu_body">
+    <ul>
+        <li><a href="#" onclick="openMenu('sub_menu_1');return(false)">menu1</a> 
+            <ul id="sub_menu_1">
+                <li><a href="#">submenu1</a></li>
+            </ul>
+        </li>
+        <li><a href="#" onclick="openMenu('sub_menu_2');return(false)">menu2</a>
+            <ul id="sub_menu_2">
+                <li><a href="#">submenu1</a></li>
+                <li><a href="#">submenu2</a></li>
+            </ul>
+        </li>
+        <li><a href="#" onclick="openMenu('sub_menu_3');return(false)">menu3</a>
+            <ul id="sub_menu_3">
+                <li><a href="#">submenu1</a></li>
+                <li><a href="#">submenu2</a></li>
+                <li><a href="#">submenu3</a></li>
+            </ul>
+        </li>
+        <li><a href="#" onclick="openMenu('sub_menu_4');return(false)">menu4</a>
+            <ul id="sub_menu_4">
+                <li><a href="#">submenu1</a></li>
+                <li><a href="#">submenu2</a></li>
+                <li><a href="#">submenu3</a></li>
+                <li><a href="#">submenu4</a></li>
+            </ul>
+        </li>
+        <li><a href="#" onclick="openMenu('sub_menu_5');return(false)">menu5</a>
+            <ul id="sub_menu_5">
+                <li><a href="#">submenu1</a></li>
+                <li><a href="#">submenu2</a></li>
+                <li><a href="#">submenu3</a></li>
+                <li><a href="#">submenu4</a></li>
+                <li><a href="#">submenu5</a></li>
+            </ul>
+        </li>
+        <li><a href="#" onclick="openMenu('sub_menu_6');return(false)">menu6</a>
+            <ul id="sub_menu_6">
+                <li><a href="#">submenu1</a></li>
+                <li><a href="#">submenu2</a></li>
+                <li><a href="#">submenu3</a></li>
+                <li><a href="#">submenu4</a></li>
+                <li><a href="#">submenu5</a></li>
+                <li><a href="#">submenu6</a></li>
+            </ul>
+        </li>
+        <li><a href="#" onclick="openMenu('sub_menu_7');return(false)">menu7</a>
+            <ul id="sub_menu_7">
+                <li><a href="#">submenu1</a></li>
+                <li><a href="#">submenu2</a></li>
+                <li><a href="#">submenu3</a></li>
+                <li><a href="#">submenu4</a></li>
+                <li><a href="#">submenu5</a></li>
+                <li><a href="#">submenu6</a></li>
+                <li><a href="#">submenu7</a></li>
+            </ul>
+        </li>
+        <li><a href="#" onclick="openMenu('sub_menu_8');return(false)">menu8</a>
+            <ul id="sub_menu_8">
+                <li><a href="#">submenu1</a></li>
+                <li><a href="#">submenu2</a></li>
+                <li><a href="#">submenu3</a></li>
+                <li><a href="#">submenu4</a></li>
+                <li><a href="#">submenu5</a></li>
+                <li><a href="#">submenu6</a></li>
+                <li><a href="#">submenu7</a></li>
+                <li><a href="#">submenu8</a></li>
+            </ul>
+        </li>
+        <li><a href="#" onclick="openMenu('sub_menu_9');return(false)">menu9</a>
+            <ul id="sub_menu_9">
+                <li><a href="#">submenu1</a></li>
+                <li><a href="#">submenu2</a></li>
+                <li><a href="#">submenu3</a></li>
+                <li><a href="#">submenu4</a></li>
+                <li><a href="#">submenu5</a></li>
+                <li><a href="#">submenu6</a></li>
+                <li><a href="#">submenu7</a></li>
+                <li><a href="#">submenu8</a></li>
+                <li><a href="#">submenu9</a></li>
+            </ul>
+        </li>
+        <li><a href="#" onclick="openMenu('sub_menu_10');return(false)">menu10</a>
+            <ul id="sub_menu_10">
+                <li><a href="#">submenu1</a></li>
+                <li><a href="#">submenu2</a></li>
+                <li><a href="#">submenu3</a></li>
+                <li><a href="#">submenu4</a></li>
+                <li><a href="#">submenu5</a></li>
+                <li><a href="#">submenu6</a></li>
+                <li><a href="#">submenu7</a></li>
+                <li><a href="#">submenu8</a></li>
+                <li><a href="#">submenu9</a></li>
+                <li><a href="#">submenu10</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+        </div>
+    </div>
+</div>
+<div id="footer">
+
+</div>
+
+</body>
+</html>

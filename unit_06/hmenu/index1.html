@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Menu: Horizontal Menus</title>
+
+    <style type="text/css">
+
+#wrapper 
+{
+    border: solid 1px black;
+    background-color:#444;
+    padding:0px;/*changing its value will give menu margins to its container*/
+    text-align:center;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+#menu
+{
+    border-right: solid 1px #777;
+    margin:0 auto;/*If you don't want the menu center aligned, remove this line and above text-align:center*/
+    font-size:0;    
+    box-sizing:content-box;
+}
+        
+#menu ul, #menu li
+{
+    display: inline;
+    list-style-type: none;padding: 0;margin: 0;border:0;background-image:none;
+}
+        
+#menu a
+{
+    text-align: center;
+    display: inline-block;
+    font: normal 11px Verdana;
+    background: url('bg.gif') no-repeat left top;
+    padding: 10px 20px;/*This defines the size of each menu item*/
+    color: white;
+    text-decoration: none;
+}
+        
+#menu a:hover, #menu a.current
+{
+    background-position: 0% -60px;
+    color: white;
+}
+    </style>
+
+ 
+    <script>
+    var menu = function () {
+      return {
+        initMenu: function () {
+            var m = document.getElementById('menu');
+            if (!m) return;
+            m.style.width = m.getElementsByTagName("ul")[0].offsetWidth + 1 + "px";
+            var url = document.location.href.toLowerCase();
+            console.log(url);
+            var a = m.getElementsByTagName("a");
+            var k = -1;
+            var l = -1;
+            //var hasEnd = 0; 
+            for (var i = 0; i < a.length; i++) {
+                if (a[i].href && url.indexOf(a[i].href.toLowerCase()) != -1 && a[i].href.length > l) {
+                    k = i;
+                    l = a[i].href.length;
+                    console.log(l);
+                }
+              
+            }
+            
+            if (k > -1) {
+                a[k].className = 'current';
+                console.log(k);
+            }
+            l = a.length;
+            
+            for (i = 0; i < l; i++) {
+                a[i].onmouseover = function () {
+                    for (j = 0; j < l; j++) {
+                        a[j].className = '';
+                    }
+                    this.className = 'current';
+                };
+                a[i].onmouseout = function () {
+                    for (j = 0; j < l; j++) {
+                        a[j].className = '';
+                        if (k > -1) {
+                            a[k].className = 'current';
+                        }
+                    }
+                };
+            }
+        }
+    };
+} ();
+
+if (window.addEventListener) {
+    window.addEventListener("load", menu.initMenu, false);
+}
+else if (window.attachEvent) {
+    window.attachEvent("onload", menu.initMenu);
+}
+else {
+    window["onload"] = menu.initMenu;
+}
+    </script>
+
+</head>
+
+<body>
+<h2>1. Menu with Image Background</h2><br />
+
+    <div id="wrapper">
+        <div id="menu">
+            <ul>
+                <li><a href="?p=Javascript-Menus">Javascript Menus</a></li>
+      <li><a href="?p=Horizontal-Menus">Horizontal Menus</a></li>
+      <li><a href="?p=Web-Menus">Web Menus</a></li>
+            </ul>
+        </div>
+    </div>
+    <br/>
+
+
+</body>
+</html>
