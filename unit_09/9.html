@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>example-4</title>
+<meta charset="utf-8" />
+</head>
+<body>
+<a href="#">Разрешить редактирование</a>
+<input type="text" disabled="disabled" value="Не редактируется" />
+
+<script src="jquery.min.js"></script>
+<script>
+$(function(){
+    $("a").click(function() {
+        $(this).next().removeAttr("disabled").focus().val("Редактируется");
+    });
+});
+</script>
+
+</body>
+</html>

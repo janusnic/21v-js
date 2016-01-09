@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>example-3</title>
+<meta charset="utf-8" />
+
+</head>
+<body>
+<p>Первый параграф</p>
+<p>Второй параграф</p>
+<p>Третий параграф</p>
+<p>Четвертый параграф</p>
+<script src="jquery.min.js"></script>
+
+<script>
+$(function(){
+    $("p").attr("name", function(n){
+    return "pName-" + n;
+    }).click(function(){
+    console.log("name = " + $(this).attr("name"));
+    });
+});
+</script>
+</body>
+</html>

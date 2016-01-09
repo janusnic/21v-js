@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>example-5</title>
+<meta charset="utf-8" />
+<style type="text/css">
+div {
+position:absolute;
+background-color:#369;
+left:100px;
+width:90px;
+height:90px;
+margin:5px;
+}
+</style>
+
+</head>
+<body>
+<button id="left">влево</button><button id="right">вправо</button>
+<div class="block"></div>
+<script src="jquery.min.js"></script>
+<script>
+$(function(){
+    $("#right").click(function(){
+        $(".block").animate({"left": "+=50px"}, "slow");
+    });
+    $("#left").click(function(){
+        $(".block").animate({"left": "-=50px"}, "slow");
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>example-6</title>
+<meta charset="utf-8" />
+
+<style type="text/css">
+div {
+width:100px;
+border:1px solid #369;
+padding:5px;
+}
+</style>
+</head>
+<body>
+<button id="go">Выполнить</button>
+<button id="stop">Остановить</button>
+<div id="block">Hello!</div>
+
+<script src="jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    $("#go").click(function(){
+        $("#block").animate({
+            "width": "70%",
+            "opacity": 0.3,
+            "marginLeft": "5em",
+            "fontSize": "3em",
+            "borderWidth": "10px"
+            }, 2500, function(){ alert("Сделано!"); 
+        });
+    });
+    $("#stop").click(function(){
+    $("#block").stop();
+    });
+});
+</script>
+</body>
+</html>

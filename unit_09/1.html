@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>example-1</title>
+<meta charset="utf-8">
+</head>
+<body>
+<a href="http://jquery.com">Официальный сайт jQuery</a>
+<script src="jquery.min.js"></script>
+<script>
+$(function(){
+    var href = $("a").attr("href"); // получаем значение атрибута
+    $("a").attr("title", href); // устанавливаем значение атрибута
+});
+</script>
+</body>
+</html>

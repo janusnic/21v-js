@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>example-2</title>
+<meta charset="utf-8">
+</head>
+<body>
+<a href="#">Официальный сайт библиотеки jQuery</a>
+<script src="jquery.min.js"></script>
+<script>
+$(function(){
+    $("a").attr({
+        "alt": "Официальный сайт jQuery",
+        "title": "jQuery.Com",
+        "href": "http://jquery.com"
+        }).click(function(){
+            console.log($(this).attr("href"));
+            console.log($(this).attr("title"));
+            console.log($(this).attr("alt"));
+            return false;
+        });
+});
+</script>
+
+</body>
+</html>

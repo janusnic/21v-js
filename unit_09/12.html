@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>example-12</title>
+<meta charset="utf-8" />
+
+<style type="text/css">
+#demo {
+width:300px; height:200px;
+overflow:auto;
+border:1px solid #369;
+}
+p {
+width:1000px;
+background-color:#ddd;
+border-bottom:1px dotted #69c;
+}
+</style>
+
+
+</head>
+<body>
+<div id="demo">
+<p>Он поднял палец ... приближался.</p>
+<p>Кровь застыла ... взором зверя,</p>
+<p>попавшего в ... сучьями,</p>
+<p>и все это ... самоотверженных.</p>
+<p>Воздух вокруг ... поворачиваться,</p>
+<p>и тут свершилось ... самые глаза.</p>
+<p>Лавр Федотович ... осинника.</p>
+<p>Справа от меня... действием.</p>
+</div>
+<button>Получить scrollTop и scrollLeft</button>
+<script src="jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+    $("#demo").scrollTop(150).scrollLeft(300);
+    $("button").click(function(){
+        var d = $("#demo");
+        alert("scrollTop = " + d.scrollTop() + ", scrollLeft = " + d.scrollLeft());
+    });
+});
+</script>
+</body>
+</html>
