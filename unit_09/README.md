@@ -650,7 +650,7 @@ $(document).ready(function(){
 });
 ```
 remove - удаляет элемент.
-
+```
 $(document).ready(function(){
     $('p').remove();
 });
