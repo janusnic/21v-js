@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html class=''>
+<head>
+<meta charset='UTF-8'>
+
+
+<style>
+@import url(http://fonts.googleapis.com/css?family=Varela+Round);
+@import url(http://fonts.googleapis.com/css?family=Lusitana);
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Varela Round";
+  background: #444444;
+}
+
+#header {
+  background: url(1.jpg) no-repeat center top;
+  background-size: cover;
+  position: fixed;
+  height: 90%;
+  bottom: 10%;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+#header .center {
+  background: rgba(0, 0, 0, 0.25);
+  text-align: center;
+  position: absolute;
+  color: #FFFFFF;
+  color: #F5F7FA;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+#header .center .middle {
+  position: absolute;
+  margin-top: -8em;
+  right: 0;
+  left: 0;
+  top: 50%;
+}
+#header .center .middle h1 {
+  font-family: "Lusitana";
+  font-weight: normal;
+  line-height: 1em;
+  font-size: 11em;
+  margin: 0;
+}
+#header .center .middle span {
+  line-height: 5em;
+  font-size: 1em;
+}
+
+#pageHr {
+  background: #FFFFFF;
+  position: relative;
+  height: 5px;
+  display: block;
+  right: 0px;
+  left: 0px;
+  top: 90%;
+  z-index: 1;
+}
+#pageHr > i {
+  margin: -25px;
+  border: 5px solid #FFFFFF;
+  height: 40px;
+  width: 40px;
+  background: #48CFAD;
+  position: absolute;
+  display: block;
+  left: 50%;
+  top: 50%;
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+#pageHr > i > i {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  line-height: 36.8px;
+  font-size: 20px;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  position: absolute;
+  color: #FFFFFF;
+  display: block;
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#page {
+  background: #37BC9B;
+  position: relative;
+  height: 123.45%;
+  top: 90%;
+}
+</style></head><body>
+<div id="header">
+  <div class="center">
+    <div class="middle">
+      <h1>Sky</h1>
+      <span>Fixed header and parallax scrolling background with a rhombus indicator</span>
+    </div>
+  </div>
+</div>
+
+<div id="pageHr"> 
+  <i><i>↓</i></i>
+</div>
+
+<div id="page"></div>
+<script src='jquery.min.js'></script>
+<script>
+$(document).scroll(function () {
+    $('#header').css({ 'background-position-y': -$(this).scrollTop() / 20 });
+});
+
+</script>
+
+</body></html>

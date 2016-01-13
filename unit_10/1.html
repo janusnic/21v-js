@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <script src="jquery.min.js"></script>
+
+  <script>
+  $(document).ready(function(){
+    var p = $("p:first");
+    $("p:last").text( "scrollTop:" + p.scrollTop() );
+
+  });
+  </script>
+
+  <style>
+  p { margin:10px;padding:5px;border:2px solid #666; }
+  </style>
+</head>
+<body>
+  <p>Hello</p><p></p>
+
+</body>
+</html>
+

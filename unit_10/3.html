@@ -1,0 +1,46 @@
+
+<!DOCTYPE html><html class=''>
+<head>
+<meta charset='UTF-8'>
+
+<style>
+.one,.two,.three,.four {
+  position:relative;
+  background-color:tomato;
+  width:40%;
+  height:80px;
+  margin: 0 auto;
+  text-align:center;
+  line-height:250%;
+  color:#fff;
+  font-family: sans-serif;
+  font-size:2em;
+  margin-bottom:500px;
+  cursor:pointer;
+}</style></head><body>
+<div class="one">1 click here</div>
+
+<div class="two">2</div>
+
+<div class="three">3</div>
+
+<div class="four">4</div>
+<script src='jquery.min.js'></script>
+
+<script>
+$('.one').click(function () {
+    $('html, body').animate({ scrollTop: $('.two').offset().top }, 1000);
+});
+$('.two').click(function () {
+    $('html, body').animate({ scrollTop: $('.three').offset().top }, 1000);
+});
+$('.three').click(function () {
+    $('html, body').animate({ scrollTop: $('.four').offset().top }, 1000);
+});
+$('.four').click(function () {
+    $('html, body').animate({ scrollTop: $('.one').offset().top }, 700);
+});
+
+</script>
+
+</body></html>

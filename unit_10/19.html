@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html class=''>
+<head>
+<meta charset='UTF-8'>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font: 16px/1.4 "Segoe UI", Tahoma, Helvetica, Sans-Serif;
+}
+#page {
+  margin-top: 3.5em;
+  min-height: 100px;
+}
+#page #top,
+#page #about,
+#page #services,
+#page #contact {
+  padding: 0.2em 1em;
+  min-height: 450px;
+  border-top: 1px dashed #666;
+}
+#page #top h2,
+#page #about h2,
+#page #services h2,
+#page #contact h2 {
+  padding: 0.3em 0;
+  line-height: 1.1em;
+  margin: 0;
+  text-align: center;
+}
+#page #top {
+  background: #ddd;
+}
+#page #about {
+  background: #ccc;
+}
+#page #services {
+  background: #bbb;
+}
+#page #contact {
+  background: #aaa;
+}
+nav,
+div.nav {
+  position: fixed;
+  z-index: 1024;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+nav ul,
+div.nav ul {
+  background: black;
+  text-align: center;
+  padding: 0.5em;
+}
+nav ul li,
+div.nav ul li {
+  list-style: none;
+  display: inline-block;
+}
+nav ul li a,
+div.nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5em;
+  box-sizing: border-box;
+}
+nav ul li a:hover,
+div.nav ul li a:hover {
+  background-color: lightGrey;
+  color: #333;
+  transition: all 0.2s;
+  border-bottom: 0.1em solid black;
+}
+nav ul li.active a,
+div.nav ul li.active a {
+  background-color: #222;
+  border-bottom: 0.1em solid #222;
+  transition: all 0.2s;
+}
+nav ul li.active a:hover,
+div.nav ul li.active a:hover {
+  background-color: lightGrey;
+  color: #333;
+  transition: all 0.2s;
+  border-bottom: 0.1em solid black;
+}
+</style></head><body>
+<nav id="topNav">
+  <ul>
+    <li class="active"><a href="#">Home</a></li><li>
+        <a href="#about">About</a></li><li>
+        <a href="#services">Services</a></li><li>
+        <a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div id="page">
+  <div id="top"></div>
+  <div id="about">
+    <h2>About Us</h2>
+  </div>
+  <div id="services">
+    <h2>Services</h2>
+  </div>
+  <div id="contact">
+    <h2>Contact Us</h2>
+  </div>
+</div>
+<script src='jquery.min.js'></script>
+<script>
+var lastId, 
+    topMenu = $('#topNav'), 
+    topMenuHeight = topMenu.outerHeight(), 
+    menuItems = topMenu.find('a'), 
+    scrollItems = menuItems.map(function () {
+            var item = $($(this).attr('href'));
+            if (item.length) {
+                return item;
+            }
+        });
+
+menuItems.click(function (e) {
+    var href = $(this).attr('href'), o = href === '#' ? 0 : $(href).offset().top - topMenuHeight + 15;
+    $('html, body').stop().animate({ scrollTop: o }, 300);
+    e.preventDefault();
+});
+
+$(window).scroll(function () {
+    var fromTop = $(this).scrollTop() + topMenuHeight;
+    var cur = scrollItems.map(function () {
+        if ($(this).offset().top < fromTop)
+            return this;
+    });
+    cur = cur[cur.length - 1];
+    var id = cur && cur.length ? cur[0].id : '';
+    if (lastId !== id) {
+        lastId = id;
+        menuItems.parent().removeClass('active').end().filter('[href=#' + id + ']').parent().addClass('active');
+    }
+});
+
+</script>
+
+</body></html>

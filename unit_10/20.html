@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html class=''>
+<head>
+<meta charset='UTF-8'>
+
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+<link rel='stylesheet prefetch' href='normalize.css'>
+
+<style>
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  text-rendering: geometricPrecision;
+  letter-spacing: 1px;
+}
+
+section:nth-of-type(0) {
+  background-color: #b2d095;
+}
+
+section:nth-of-type(1) {
+  background-color: #98c072;
+}
+
+section:nth-of-type(2) {
+  background-color: #7eb04f;
+}
+
+section:nth-of-type(3) {
+  background-color: #658d3f;
+}
+
+section:nth-of-type(4) {
+  background-color: #4c6a2f;
+}
+
+section:nth-of-type(5) {
+  background-color: #334720;
+}
+
+section {
+  max-height: 492px;
+  padding: 0.5em 6%;
+}
+section h1 {
+  text-align: center;
+  color: #ddd;
+  text-shadow: 1px 1px #333;
+  transition: color 1s;
+  margin-bottom: 1em;
+}
+section p, section div {
+  width: 42%;
+  height: 300px;
+  display: inline-block;
+  vertical-align: top;
+  color: #eee;
+  transition: margin-left .33s ease, opacity .33s ease;
+}
+section div {
+  border: 1px solid #fff;
+  border-radius: .75em;
+}
+section div img{
+  max-width: 100%;
+  height: 300px;
+}
+section p {
+  line-height: 2;
+}
+
+section p:nth-child(2),
+section div:nth-child(2) {
+  opacity: 0;
+  margin-left: -5%;
+}
+
+section p:nth-child(3),
+section div:nth-child(3) {
+  opacity: 0;
+  margin-left: 15%;
+}
+
+.onScreen p:nth-child(2),
+.onScreen div:nth-child(2) {
+  opacity: 1;
+  margin-left: 0%;
+}
+
+.onScreen p:nth-child(3),
+.onScreen div:nth-child(3) {
+  margin-left: 5%;
+  opacity: 1;
+}
+
+nav {
+  z-index: 2;
+  height: 100%;
+  position: fixed;
+  width: 2em;
+}
+nav ul {
+  position: fixed;
+  right: 1.5em;
+  top: 33%;
+  height: 33%;
+  min-height: 100px;
+  max-height: 175px;
+  padding-left: 0;
+  list-style-type: none;
+}
+nav ul li {
+  height: 20%;
+  width: 6px;
+}
+nav ul li a {
+  display: block;
+  position: relative;
+  height: 0.5em;
+  width: 0.5em;
+  top: 50%;
+  /*margin: -.2em -1px;*/
+  border-radius: 50%;
+  border: 1px solid white;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-clip: padding-box;
+  background: #fff rgba(255, 255, 255, 0.33);
+  cursor: pointer;
+  text-indent: 1em;
+  text-decoration: none;
+  color: white;
+  transition: background 500ms ease;
+}
+nav ul li a:hover {
+  background: white;
+  border: 1px solid white;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background-clip: padding-box;
+  box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.375);
+}
+nav ul li a span {
+  text-align: right;
+  width: 90px;
+  display: block;
+  overflow: hidden;
+  opacity: 0;
+  margin: -.33em 0 0 -110px;
+  transition: margin-left 100ms ease, opacity 300ms ease, transform 333ms linear;
+  font-size: .75em;
+}
+nav ul li a:hover > span {
+  opacity: .75;
+  margin-left: -105px;
+}
+
+#current {
+  background: white;
+  border: 1px solid white;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background-clip: padding-box;
+}
+#current > span {
+  opacity: 1;
+  margin-left: -105px;
+}
+</style></head><body>
+<nav>
+  <ul>
+    <li>
+      <a href='#1' id='1'>
+        <span>
+          Hello
+          1
+        </span>
+      </a>
+    </li>
+    <li>
+      <a href='#2' id='2'>
+        <span>
+          Hello
+          2
+        </span>
+      </a>
+    </li>
+    <li>
+      <a href='#3' id='3'>
+        <span>
+          Hello
+          3
+        </span>
+      </a>
+    </li>
+    <li>
+      <a href='#4' id='4'>
+        <span>
+          Hello
+          4
+        </span>
+      </a>
+    </li>
+    <li>
+      <a href='#5' id='5'>
+        <span>
+          Hello
+          5
+        </span>
+      </a>
+    </li>
+  </ul>
+</nav>
+<section>
+  <h1 id='1'>
+    1
+  </h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum atque enim quisquam distinctio eligendi quam explicabo illo eaque laborum a corporis aliquid veritatis nulla error sapiente animi facilis repellat commodi?</p>
+  <div><img src='1.jpg'></div>
+</section>
+<section>
+  <h1 id='2'>
+    2
+  </h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum atque enim quisquam distinctio eligendi quam explicabo illo eaque laborum a corporis aliquid veritatis nulla error sapiente animi facilis repellat commodi?</p>
+  <div><img src='2.jpg'></div>
+</section>
+<section>
+  <h1 id='3'>
+    3
+  </h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum atque enim quisquam distinctio eligendi quam explicabo illo eaque laborum a corporis aliquid veritatis nulla error sapiente animi facilis repellat commodi?</p>
+  <div><img src='3.jpg'></div>
+</section>
+<section>
+  <h1 id='4'>
+    4
+  </h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum atque enim quisquam distinctio eligendi quam explicabo illo eaque laborum a corporis aliquid veritatis nulla error sapiente animi facilis repellat commodi?</p>
+  <div><img src='5.jpg'></div>
+</section>
+<section>
+  <h1 id='5'>
+    5
+  </h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum atque enim quisquam distinctio eligendi quam explicabo illo eaque laborum a corporis aliquid veritatis nulla error sapiente animi facilis repellat commodi?</p>
+  <div><img src='4.jpg'></div>
+</section>
+
+<section>
+  <h1 id='6'>
+    6
+  </h1>
+  
+</section>
+<script src='jquery.min.js'></script>
+<script>
+(function () {
+    var sectionHeight;
+    sectionHeight = $(window).height();
+    $('section').css('height', sectionHeight);
+    $(window).resize(function () {
+        sectionHeight = $(window).height();
+        return $('section').css('height', sectionHeight);
+    });
+    $('nav ul li:first-child a').attr('id', 'current');
+    $('body section:first-of-type').attr('class', 'onScreen');
+    $('nav a').click(function () {
+        $('nav a').removeAttr('id');
+        return $(this).attr('id', 'current');
+    });
+    $(function () {
+        return $('nav a[href*=#]:not([href=#])').click(function () {
+            var target;
+            if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
+                target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({ scrollTop: target.offset().top - 61 }, 333);
+                    return false;
+                }
+            }
+        });
+    });
+    $(window).on('scroll', function () {
+        var onScreen;
+        onScreen = '';
+        $('nav a').removeAttr('id');
+        $('section').removeAttr('class');
+        return $('section').each(function () {
+            var positionY, ref, scrollDist, sectionOffsetBottom, vpHeight, vpThreshhold;
+            vpHeight = $(window).innerHeight();
+            vpThreshhold = vpHeight / 3;
+            scrollDist = $('body').scrollTop();
+            positionY = $(this).position().top;
+            sectionHeight = $(this).outerHeight();
+            sectionOffsetBottom = positionY + sectionHeight;
+            if (0 <= (ref = positionY - scrollDist) && ref <= vpThreshhold) {
+                onScreen = $(this).children('h1').attr('id');
+                $('nav ul li:nth-child(' + onScreen + ') > a').attr('id', 'current');
+                return $('body section:nth-of-type(' + onScreen + ')').attr('class', 'onScreen');
+            }
+        });
+    });
+}.call(this));
+
+</script>
+
+</body></html>
