@@ -1,0 +1,100 @@
+<div id="placeholder"></div>
+<div id="placeholder1"></div>
+<div id="placeholder2"></div>
+<div id="placeholder3"></div>
+<div id="placeholder4"></div>
+<div id="placeholder5"></div>
+<script>
+var products = {
+        'Suit': [
+            'Suit',
+            'The mug you\'ve been dreaming about. One sip from this ceramic 16oz fluid delivery system and you\'ll never go back to red cups.',
+            14,
+            '../images/1.jpg',
+            1
+        ],
+        'Bow tie': [
+            'Bow tie',
+            'These coasters roll all of the greatest qualities into one: class, leather, and octocats. They also happen to protect surfaces from cold drinks.',
+            18,
+            '../images/2.jpg',
+            2
+        ],
+        'Sweater': [
+            'Sweater',
+            'Set of two heavyweight 16 oz. Octopint glasses for your favorite malty beverage.',
+            16,
+            '../images/3.jpg',
+            3
+        ],
+        'Hat': [
+            'Hat',
+            'Check it. Blacktocat is back with a whole new direction. He\'s exited stealth mode and is ready for primetime, now with a stylish logo.',
+            25,
+            '../images/4.jpg',
+            4
+        ],
+        'Shoes': [
+            'Shoes',
+            'Need a huge Octocat sticker for your laptop, fridge, snowboard, or ceiling fan? Look no further!',
+            2,
+            '../images/5.jpg',
+            5
+        ],
+        'Glasses': [
+            'Glasses',
+            'Pixels are your friends. Show your bits in this super-comfy blue American Apparel tri-blend shirt with a pixelated version of your favorite aquatic feline',
+            25,
+            '../images/6.jpg',
+            6
+        ]
+    };
+
+
+document.getElementById("placeholder").innerHTML=products.Glasses[1];
+
+document.getElementById("placeholder1").innerHTML=products['Glasses'][1];
+
+document.getElementById("placeholder2").innerHTML=products['Glasses'][0] +' '+ products['Glasses'][1] +' Best Price: '+ products['Glasses'][2] ;
+
+var output="<ul>";
+    
+        output+="<li>" + products.Glasses[0] + " " + products.Glasses[1] + "--" + products.Glasses[2]+ ' <img src=' + products.Glasses[3]+'>'+ "</li>";
+    
+    output+="</ul>";
+
+    document.getElementById("placeholder3").innerHTML=output;
+
+var output="<ul>";
+
+for (var i in products) {
+console.log(i);
+output+="<li>" + i +'>'+ "</li>";
+}    
+    output+="</ul>";
+    document.getElementById("placeholder4").innerHTML=output;
+
+
+var output="<ul>";
+//for (var i in Object.keys(products)) {
+for (var i in products) {
+
+console.log(i);
+var product = products[i];
+console.log(products[i]);
+
+output+="<li>" + product[0] + " " + product[1] + "--" + product[2]+ ' <img src=' + product[3]+'>'+ "</li>";
+}    
+    output+="</ul>";
+
+    document.getElementById("placeholder5").innerHTML=output;
+
+
+var prod = JSON.stringify(products);
+
+console.log(prod);
+var prodstr = '{"Suit":["Suit","The mug you\'ve been dreaming about. One sip from this ceramic 16oz fluid delivery system and you\'ll never go back to red cups.",14,"../images/1.jpg",1],"Bow tie":["Bow tie","These coasters roll all of the greatest qualities into one: class, leather, and octocats. They also happen to protect surfaces from cold drinks.",18,"../images/2.jpg",2],"Sweater":["Sweater","Set of two heavyweight 16 oz. Octopint glasses for your favorite malty beverage.",16,"../images/3.jpg",3],"Hat":["Hat","Check it. Blacktocat is back with a whole new direction. He\'s exited stealth mode and is ready for primetime, now with a stylish logo.",25,"../images/4.jpg",4],"Shoes":["Shoes","Need a huge Octocat sticker for your laptop, fridge, snowboard, or ceiling fan? Look no further!",2,"../images/5.jpg",5],"Glasses":["Glasses","Pixels are your friends. Show your bits in this super-comfy blue American Apparel tri-blend shirt with a pixelated version of your favorite aquatic feline",25,"../images/6.jpg",6]}';
+products = JSON.parse(prodstr);
+
+console.log( products['Bow tie'][1] ); // 
+</script>
