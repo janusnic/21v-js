@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html class=''>
+<head>
+<meta charset='UTF-8'>
+
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+<body>
+
+<button id="loadhtml"> Получить html данные с сервера и разобрать их </button>
+<div id="feeds" style="margin:20px;display:none;height:50px;"></div>
+
+<script src='/js/jquery.min.js'></script>
+
+<script>
+
+ $("#loadhtml").click(function(){
+    $("#feeds").load("base.php", function(data){
+        $(this).text(data);
+    }).show("slow");
+ });  
+</script>
+
+</body>
+</html>
