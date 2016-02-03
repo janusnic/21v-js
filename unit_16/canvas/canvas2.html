@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+    <head>
+        <title>canvas line Example</title>
+        <meta charset='utf-8' />
+    </head>
+    <body>
+      
+       <canvas height='375' width='500' id='ex1' style="border:1px solid #00ff00;">Обновите браузер</canvas>
+        
+        <script>
+         //найти сценарий canvas элемент в DOM и получить его в контекст рисования
+         var b_canvas = document.getElementById("ex1");
+         var context = b_canvas.getContext("2d");
+ 
+         //  Рисование вертикальных линий
+            /*for (var x = 0.5; x < 500; x += 10) {
+                context.moveTo(x, 0);
+                context.lineTo(x, 375);
+            }
+        // Рисование горизонтальных линий
+            for (var y = 0.5; y < 375; y += 10) {
+                context.moveTo(0, y);
+                context.lineTo(500, y);
+            }
+
+        // чернильные методы, чтобы сделать рисунок видимым
+            context.strokeStyle = "#eee";
+            context.stroke();
+        */ 
+        
+        
+          function v_draw() {
+             //  Рисование вертикальных линий
+            for (var x = 0.5; x < 500; x += 10) {
+                context.moveTo(x, 0);
+                context.lineTo(x, 375);
+                }
+            }
+          function h_draw() {
+            // Рисование горизонтальных линий
+            for (var y = 0.5; y < 375; y += 10) {
+                context.moveTo(0, y);
+                context.lineTo(500, y);
+                } 
+            }
+         function hv_stroke() {
+         // чернильные методы, чтобы сделать рисунок видимым
+            context.strokeStyle = "#eee";
+            context.stroke();
+         }
+        
+        function hv_ox() {
+         // Новый контур черные вертикальные линии
+            context.beginPath();
+            context.moveTo(0, 40);
+            context.lineTo(240, 40);
+            context.moveTo(260, 40);
+            context.lineTo(500, 40);
+            context.moveTo(495, 35);
+            context.lineTo(500, 40);
+            context.lineTo(495, 45);
+
+            context.moveTo(60, 0);
+            context.lineTo(60, 153);
+            context.moveTo(60, 173);
+            context.lineTo(60, 375);
+            context.moveTo(65, 370);
+            context.lineTo(60, 375);
+            context.lineTo(55, 370);
+
+            context.strokeStyle = "#000";
+            context.stroke();
+         }
+        function text_draw() {
+         // Изменение стиля шрифта
+        context.font = "bold 12px sans-serif";
+        context.fillText("x", 248, 43);
+        context.fillText("y", 58, 165);
+        // Метод fillText рисует собственно текст.
+        context.font = "bold 12px sans-serif";
+        context.fillText("x", 248, 43);
+        context.fillText("y", 58, 165);
+
+        context.textBaseline = "top";
+        context.fillText("( 0 , 0 )", 8, 5);
+        context.textAlign = "right";
+        context.textBaseline = "bottom";
+        context.fillText("( 500 , 375 )", 492, 370);
+        //Рисуем две точки
+        context.fillRect(0, 0, 3, 3);
+        context.fillRect(497, 372, 3, 3);
+
+     }
+        </script>
+        <p><button onclick="v_draw()">Рисование вертикальных линий</button></p>
+        <p><button onclick="h_draw()">Рисование горизонтальных линий</button></p>
+        <p><button onclick="hv_stroke()">чернильные методы</button></p>
+        <p><button onclick="hv_ox()">черные вертикальные линии</button></p>
+        <p><button onclick="text_draw()">Рисование текста</button></p>
+
+    </body>
+</html>

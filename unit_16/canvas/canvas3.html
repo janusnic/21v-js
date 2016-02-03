@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+    <head>
+        <title>canvas gradient Example</title>
+        <meta charset='utf-8' />
+    </head>
+    <body>
+      
+       <canvas height='375' width='500' id='ex1' style="border:1px solid #00ff00;">Обновите браузер</canvas>
+        
+        <script>
+         //найти сценарий canvas элемент в DOM и получить его в контекст рисования
+         var b_canvas = document.getElementById("ex1");
+         var context = b_canvas.getContext("2d");
+ 
+         
+          function l_gradient() {
+            //  Создание градиентного объекта
+            var my_gradient = context.createLinearGradient(0, 0, 300, 0);
+            // определим градиент от черного цвета к белому.
+                my_gradient.addColorStop(0, "black");
+                my_gradient.addColorStop(1, "white");
+                //Стиль заполнения градиентом
+                context.fillStyle = my_gradient;
+                context.fillRect(0, 0, 300, 225);
+            }
+          function lv_gradient() {
+            //  Значения x равны 0, значения y меняются
+            var my_gradient = context.createLinearGradient(0, 0, 0, 300);
+            // определим градиент от черного цвета к белому.
+                my_gradient.addColorStop(0, "black");
+                my_gradient.addColorStop(1, "white");
+                //Стиль заполнения градиентом
+                context.fillStyle = my_gradient;
+                context.fillRect(0, 0, 300, 225);
+            }
+          function lh_gradient() {
+            //  Оба значения x и y меняются
+            var my_gradient = context.createLinearGradient(0, 0, 300, 300);
+            // определим градиент от черного цвета к белому.
+                my_gradient.addColorStop(0, "black");
+                my_gradient.addColorStop(1, "white");
+                //Стиль заполнения градиентом
+                context.fillStyle = my_gradient;
+                context.fillRect(0, 0, 300, 300);
+            }
+        
+        function rad_gradient() {
+         var my_gradient = context.createRadialGradient(175,50,50,190,60,100);
+                my_gradient.addColorStop(0, "red");
+                my_gradient.addColorStop(1, "green");
+                //Стиль заполнения градиентом
+                context.fillStyle = my_gradient;
+                context.fillRect(10, 10, 300, 300);
+         }
+        
+        </script>
+        <p><button onclick="l_gradient()">Создание градиентного объекта</button></p>
+        <p><button onclick="lv_gradient()">градиент сверху вниз</button></p>
+        <p><button onclick="lh_gradient()">градиент по диагонали</button></p>
+        <p><button onclick="rad_gradient()">Circular Gradient </button></p>
+        
+
+    </body>
+</html>

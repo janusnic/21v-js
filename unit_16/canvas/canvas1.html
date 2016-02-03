@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+    <head>
+        <title>canvasExample</title>
+        <meta charset='utf-8' />
+    </head>
+    <body>
+        <canvas height='320' width='480' id='example' style="border:1px solid #ff0000;">Обновите браузер</canvas>
+
+        <canvas height='320' width='480' id='ex1' style="border:1px solid #00ff00;">Обновите браузер</canvas>
+        <script>
+        // Теперь легко можно обнаружить элемент canvas в DOM.
+            var ex1 = document.getElementById('ex1');
+            
+            // Каждый холст изначально пустой.
+
+            var example = document.getElementById("example"),
+                ctx     = example.getContext('2d');
+                
+                ctx.fillRect(0, 0, example.width, example.height);
+                ctx.fillStyle = "#FF0000";
+                ctx.fillRect(30, 40, 300, 200);
+            
+            function draw_ex1() {
+              // Первая строка функции находит элемент canvas в DOM.
+              var b_canvas = document.getElementById("ex1");
+              /* Каждый холст имеет контекст рисования. Как только вы нашли элемент canvas в DOM (с помощью document.getElementById() или любым другим способом), вызываете метод getContext(). Необходимо указать строку "2D" в методе getContext(). В спецификации HTML5 отмечено: «в будущих версиях данной спецификации, вероятно, будет определен 3D-контекст». */
+              var b_context = b_canvas.getContext("2d");
+              b_context.fillRect(50, 25, 150, 100);
+            }
+            function clear_ex1() {
+              // Первая строка функции находит элемент canvas в DOM.
+              var b_canvas = document.getElementById("ex1");
+              /* clearRect(x, y, width, height) удаляет пиксели в указанном прямоугольнике.  */
+              var b_context = b_canvas.getContext("2d");
+              b_context.clearRect(50, 25, 150, 100);
+            }
+
+            function reload_ex1() {
+              var b_canvas = document.getElementById("ex1");
+                /* Можно «перезагрузить» холст  */
+              b_canvas.width = b_canvas.width;
+            }
+        </script>
+        <p><button onclick="myCanvas()">Try it</button></p>
+        <p><button onclick="draw_ex1()">Fill Rect</button></p>
+        <p><button onclick="clear_ex1()">Clear Rect</button></p>
+        <p><button onclick="reload_ex1()">Reload Canvas</button></p>
+    </body>
+</html>

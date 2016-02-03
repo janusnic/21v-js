@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+    <head>
+        <title>canvas arc Example</title>
+        <meta charset='utf-8' />
+    </head>
+    <body>
+        <canvas height='320' width='480' id='example' style="border:1px solid #ff0000;">Обновите браузер</canvas>
+
+    
+        <script>
+            
+            // Каждый холст изначально пустой.
+            var example = document.getElementById("example"),
+                context     = example.getContext('2d');
+            
+            function draw_ex1() {
+                   
+              context.beginPath(); 
+                context.arc(80, 100, 56, 3/4 * Math.PI, 1/4 * Math.PI, true); context.fill(); // *14 
+                context.moveTo(40, 140); 
+                context.lineTo(20, 40); 
+                context.lineTo(60, 100); 
+                context.lineTo(80, 20); 
+                context.lineTo(100, 100); 
+                context.lineTo(140, 40); 
+                context.lineTo(120, 140); 
+                context.stroke(); // *22 
+            }
+            function draw_ex2() {
+             
+             context.beginPath(); 
+                context.arc(80, 100, 56, 3/4 * Math.PI, 1/4 * Math.PI, true); context.fill(); // *14 
+                context.moveTo(10, 15); 
+
+                context.bezierCurveTo(75, 55, 175, 20, 250, 15);
+                context.moveTo(10, 15); 
+                context.quadraticCurveTo(100, 100, 250, 15); 
+                
+                context.stroke(); // 
+            }
+
+            function draw_ex3() {
+             
+             context.beginPath(); 
+             context.fillStyle = '#AF5200'; // меняем цвет
+                context.arc(80, 100, 56, 3/4 * Math.PI, 1/4 * Math.PI, true); context.fill(); // *14 
+                context.moveTo(10, 15); 
+
+                context.bezierCurveTo(75, 55, 175, 20, 250, 15);
+                context.moveTo(10, 15); 
+                context.quadraticCurveTo(100, 100, 250, 15); 
+                context.strokeStyle = '#B70A02'; // меняем цвет
+                context.stroke(); // 
+            }
+        </script>
+        
+        <p><button onclick="draw_ex1()">Fill Arc</button></p>
+        <p><button onclick="draw_ex2()">Кривые Бернштейна-Безье</button></p>
+        <p><button onclick="draw_ex3()">Reload Canvas</button></p>
+    </body>
+</html>

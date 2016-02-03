@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+    <head>
+        <title>canvas Использование img Example</title>
+        <meta charset='utf-8' />
+    </head>
+    <body>
+      
+       <canvas height='375' width='500' id='ex1' style="border:1px solid #00ff00;">Обновите браузер</canvas>
+        
+    <h1>Использование img</h1>
+    <img id="cat" src="img_the_scream.jpg" alt="img" width="177" height="113">
+
+    <img id="scream" src="2.jpg" alt="The Scream" width="220" height="277">
+        <script>
+         //найти сценарий canvas элемент в DOM и получить его в контекст рисования
+         var b_canvas = document.getElementById("ex1");
+         var context = b_canvas.getContext("2d");
+
+            window.onload = function() {
+                var cat = document.getElementById("cat");
+                context.drawImage(cat, 0, 0);
+            }; 
+         
+         var cat = new Image();
+            cat.src = "img_the_scream.jpg";
+            cat.onload = function() {
+                for (var x = 0, y = 0;
+                x < 500 && y < 375;
+                x += 50, y += 37) {
+                context.drawImage(cat, x, y, 88, 56);
+                }
+            };
+          
+            function myCanvas() {
+                               
+                var img = document.getElementById("scream");
+                context.drawImage(img,10,10);
+            }
+
+            function myCanvas1() {
+                               
+                var img = document.getElementById("scream");
+                context.drawImage(img,10,10,150,150);
+            }
+            function myCanvas2() {
+                               
+                var img = document.getElementById("scream");
+                context.drawImage(img,0,0,130,200,100,100,150,150);
+            }
+            function myCanvas3() {
+                                  
+            var img = new Image();
+            img.src = 'data:image/gif;base64,R0lGODlhDAAMAOYAANPe5Pz//4KkutDb4szY3/b+/5u5z/3//3KWrfn//8rk8naasYGkuszY4Mbg8qG+0dzv9tXg5sTg8t/o7vP8/4iqv9ft9NPe5qfD1Mfc56O/0YKlu+Lr8M3Z4JCwxuj2/Of0+eDz9+rw9Z68z8/n8sHe8sbT3Ju6zuDv96nE1Onw9Nbh6cvX39Hq89Hq8u77/srW3tbh54Kku8ba56TD1u37/vL8/vL8/9ft9ebu8+Ps8bzM1Ymsw7XR4Nnj6Yanvsnj8qrI2Or2/NTf5tvl68vY3+r3/HqdtNji6OXt8eDz+dLc477c7bDO3t7n7d7v9s3Z4dbs9N/y98Pd6PX+/8/b4f7//+Hp7tDo8vv//+fu84GjunKWro6uxHqctOfu9P///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAMAAwAAAeEgCJfg4RfWlo5KlpgjI2OOklWBwcBAVmXCQlXHAUFVBkGBjMUNzZOEy81IF2sXUZCH0QrDyhPGzICAkohUj4XHhoQKQsLGDgWUTFIJxUjUy0uWNIkQxE9W9gMDD9BCgpLAEBNXl5H5F40DlUDEkxc71wICDwlDQBQHQ0EBEUsJjswBgQCADs=';
+            
+            context.drawImage(img,100,100,150,150);
+            }
+            
+        </script>
+        <p><button onclick="myCanvas()">Создание img объекта</button></p>
+        <p><button onclick="myCanvas1()">масштабирует 150 x 150</button></p>
+        <p><button onclick="myCanvas2()">обрезает до прямоугольника</button></p>
+        <p><button onclick="myCanvas3()">источник изображения</button></p>
+        
+
+    </body>
+</html>

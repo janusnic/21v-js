@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <script type="text/javascript">
+    
+      //Global variables
+      var picWidth = 200; // width of the canvas
+      var picHeight = 200; // height of the canvas
+      var picLength = picWidth * picHeight; // number of chunks
+      var myImage = new Image(); // Create a new blank image.
+      
+      // Load the image and display it.
+      function displayImage() {
+
+        // Get the canvas element.
+        canvas = document.getElementById("myCanvas");
+
+        // Make sure you got it.
+        if (canvas.getContext) {
+
+          // Specify 2d canvas type.
+          ctx = canvas.getContext("2d");
+
+          // When the image is loaded, draw it.
+          myImage.onload = function() {
+            // Load the image into the context.
+            ctx.drawImage(myImage, 0, 0);
+
+            // Get and modify the image data.
+            getColorData();
+
+            // Put the modified image back on the canvas.
+            putColorData();
+          }
+
+          // Define the source of the image.
+          // This file must be on your machine in the same folder as this web page.
+          myImage.src = "kestral.png";
+        }
+      }
+
+      function getColorData() {
+
+        myImage = ctx.getImageData(0, 0, 200, 200);
+
+        // Loop through data.
+        for (var i = 0; i < picLength * 4; i += 4) {
+
+          // First bytes are red bytes.        
+          // Second bytes are green bytes.
+          // Third bytes are blue bytes.
+          // Fourth bytes are alpha bytes
+          // Test of alpha channel at 50%.
+          myImage.data[i + 3] = 128;
+        }
+      }
+
+      function putColorData() {
+
+        ctx.putImageData(myImage, 0, 0);
+      }
+      
+      function noPhoto() {
+      
+        alert("Please put a .png file in this folder and name it kestral.png.");
+        
+        }
+        
+    </script>
+  </head>
+  
+  <body onload="displayImage()">
+    <h1>
+      American Kestral
+    </h1>
+    <p>
+      The original image is on the left and the modified image is on the right.
+    </p>
+    <img id="myPhoto" src="kestral.png" onerror="noPhoto()">
+    <canvas id="myCanvas" width="200" height="200">
+    </canvas>
+    <p>
+      Public domain image courtesy of U.S. Fish and Wildlife Service.
+    </p>
+  </body>
+
+</html>
